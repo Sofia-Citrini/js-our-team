@@ -33,12 +33,20 @@ const team = [
 
 const membriContainer = document.querySelector('.membri-container');
 
-for (let i = 0; 1 < team.length; i++) {
-    const cardMembro = document.createElement('div');
-
+for (let i = 0; i < team.length; i++) {
     const membriTeam = team[i];
     console.log(`Nome:${membriTeam.nome}, Ruolo:${membriTeam.ruolo}, Foto:${membriTeam.foto}`);
 
-    cardMembro.innerHTML = `Nome:${membriTeam.nome}, Ruolo:${membriTeam.ruolo}, Foto:${membriTeam.foto}`;
-    membriContainer.append(cardMembro);
+    membriContainer.innerHTML += `<div class="card" style="width: 18rem; flex-basis: calc((100% / 2) - 2rem); margin: 1rem;">
+                                    <img class="card-img-top" src="${membriTeam.foto}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4>${membriTeam.nome}</h4>
+                                        <h5>${membriTeam.ruolo}</h5>
+                                    </div>
+                                </div>`;
+                                
+    // const cardMembro = document.createElement('div');
+    // cardMembro.style.flexBasis = 100 / 3 + '%';
+    // cardMembro.innerHTML = `Nome:${membriTeam.nome}, Ruolo:${membriTeam.ruolo}, Foto:${membriTeam.foto}`;
+    // membriContainer.append(cardMembro);
 }
