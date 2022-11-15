@@ -31,7 +31,14 @@ const team = [
     }
 ];
 
+const membriContainer = document.querySelector('.membri-container');
+
 for (let i = 0; 1 < team.length; i++) {
+    const cardMembro = document.createElement('div');
+
     const membriTeam = team[i];
     console.log(`Nome:${membriTeam.nome}, Ruolo:${membriTeam.ruolo}, Foto:${membriTeam.foto}`);
+
+    cardMembro.innerHTML = `Nome:${membriTeam.nome}, Ruolo:${membriTeam.ruolo}, Foto:${membriTeam.foto}`;
+    membriContainer.append(cardMembro);
 }
